@@ -1,13 +1,14 @@
 # Remote Robot Control
 
-Remote Robot Control is as set of Python modules for DC motor control, 
-connected to robot, remotely via PC over LAN.
+Remote Robot Control is as set of Python modules for DC motor control an movement, 
+which is done remotely via PC over LAN.
 The robot DC motors are connected to L298N dual DC motor driver (H-bridge), 
 which is connected to GPIO pins on RaspberryPi.
 Remote robot control is achieved by using TCP sockets over local (home) 
 network.
-In the following text it will be explained how to setup this Python scripts 
-to work with robot (DC motors, L298N and RaspberryPi) and PC.
+In the following text it will be explained how to setup the Python project 
+scripts and modules to work with robot (DC motors, L298N and RaspberryPi) 
+and PC.
 
 
 
@@ -20,8 +21,8 @@ Minimum parts required for this project to successfully work are listed here:
 4. [Power supply for RaspberryPi](https://soldered.com/product/power-supply-5v-3a-with-microusb-connector)
 5. [Set of male-female cables](https://soldered.com/product/set-of-male-female-cables-40-pieces)
 6. [Set of female-female cables](https://soldered.com/product/set-of-female-female-cables-40-pieces)
-7. [4xAA battery holder for powering L298N and DC motors](https://soldered.com/product/4xaa-battery-holder)
-8. [AA battery pack](https://www.konzum.hr/web/products/varta-baterije-aa-lr6-mn1500-6-1)
+7. [8xAA battery holder for powering L298N and DC motors](https://soldered.com/product/8xaa-battery-holder-with-dc-connector)
+8. [AA battery pack](https://www.konzum.hr/web/products/varta-energy-baterije-aa-lr6-mn1500-8-1)
 9. [Micro SD memory card for RaspberryPi OS](https://www.links.hr/hr/memorijska-kartica-kingston-canvas-select-plus-micro-sdcs2-32gb-sdhc-32gb-class-10-uhs-i-adapter-300900578)
 
 It is also highly recommended to buy robotics kit to build an actual robot, 
@@ -121,8 +122,8 @@ motor control module (RemoteMotorControl.py) configures correct GPIO pins.
 
 There are set of 3 pins for power at the front of L298N PCB, near the speed and 
 direction control pins.
-These pins should be connected to 4xAA battery holder.
-The battery holder should be loaded with 4 batteries.
+These pins should be connected to 8xAA battery holder.
+The battery holder should be loaded with 8 batteries.
 
 The L298N power pins are the following:
 1. VS (+12V)
@@ -147,8 +148,8 @@ To connect grounds from both RaspberryPi and L298N to battery bank's *-* wire
 either *-* wire from battey bank should be soldered with 2 wires, which make 
 fork.
 Then one soldered wire should be connected to L298N, and the other soldered 
-wire should be connected to RaspberryPi.
-But that solution requires soldering iron and solder.
+wire should be connected to RaspberryPi, but that solution requires soldering 
+iron and solder.
 The easier solution is to just connect battery *-* to L298N's GND pin, 
 and try to squeeze one male-female wire to L298N's GND pin with battery *-* 
 wire.
@@ -229,7 +230,7 @@ The following command should be issued in Powershell (Windows) / Terminal
 
 If everything is ok, from this point it is possible to remotely control the 
 robot on Powershell/Terminal by inputting appropriate key on keyboard.
-See *Commands* section to find out how to control the robot remotely on 
+See **Commands** section to find out how to control the robot remotely on 
 PC/Linux/Mac.
 
 
